@@ -1,0 +1,10 @@
+const express=require('express');
+const router=express.Router();
+const lessonsController=require('../controllers/lessons');
+router.post('/add',lessonsController.addLesson);
+router.get("/getLessonsByCourseId/:id",lessonsController.getAllLessonsByCourseId);
+router.get("/getLessonById/:id",lessonsController.getOneLesson);
+router.get("/getLessonInfoById/:id",lessonsController.lessonInfo);
+router.delete('/deleteLessonById/:id',lessonsController.deleteOne);
+router.put('/updateLessonById/:id',lessonsController.updateLesson);
+module.exports=router;
